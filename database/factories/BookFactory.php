@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Book;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
 
 class BookFactory extends Factory
 {
@@ -29,17 +30,4 @@ class BookFactory extends Factory
             'date_published' => $this->faker->date,
         ];
     }
-
-    /**
-     * Create 20 books.
-     *
-     * @return void
-     */
-    public static function createMany()
-    {
-        Book::factory()->count(20)->create();
-    }
 }
-
-// Call the createMany method to create 20 books when the file is included
-BookFactory::createMany();
